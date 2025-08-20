@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIKARA — Tentang Sejarah</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+<nav class=" bg-[#112233]  shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    <a href="index.html" class="flex items-center">
+      <img src="gambar/CIKARA - WHITE.png" alt="CIKARA Logo" class="h-10">
+    </a>
+
+    <ul class="hidden md:flex items-center space-x-6 text-white font-medium">
+      <li><a href="index.html" class="hover:text-[#d4af37] transition">Home</a></li>
+
+      <li class="relative">
+        <a href="#" id="profilBtn" class="hover:text-[#d4af37] font-semibold transition">
+          Profil <i class="bi bi-caret-down-fill ms-1"></i>
+        </a>
+        <ul id="profilMenu" class="absolute hidden  bg-[#112233] rounded-md mt-2 w-44 shadow-lg z-50">
+          <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-[#1c2f5a] hover:text-[#D4AF37]">Tentang Sejarah</a></li>
+          <li><a href="visi-misi.html" class="block px-4 py-2 hover:bg-[#1c2f5a] hover:text-[#D4AF37]">Visi & Misi</a></li>
+          <li><a href="program.html" class="block px-4 py-2 hover:bg-[#1c2f5a] hover:text-[#D4AF37]">Program</a></li>
+        </ul>
+      </li>
+
+      <li><a href="galeri.html" class="hover:text-[#d4af37] transition">Galeri</a></li>
+      <li><a href="showcase.html" class="hover:text-[#d4af37] transition">Showcase</a></li>
+      <li><a href="login.html" class="bg-[#d4af37] text-black px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">Login</a></li>
+    </ul>
+    <button id="mobileBtn" class="md:hidden flex flex-col justify-between w-6 h-6 focus:outline-none">
+      <span class="block h-0.5 w-full bg-white"></span>
+      <span class="block h-0.5 w-full bg-white"></span>
+      <span class="block h-0.5 w-full bg-white"></span>
+    </button>
+  </div>
+  <ul id="mobileMenu" class="md:hidden hidden bg-[#112233] text-white px-4 pt-2 pb-4 space-y-1">
+    <li><a href="index.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Home</a></li>
+
+    <li class="relative">
+      <button id="mobileDropdownBtn" class="w-full flex justify-between items-center px-2 py-2 hover:bg-[#1c2f5a] rounded">
+        Profil
+        <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <ul id="mobileDropdown" class="hidden pl-4 mt-1 space-y-1">
+        <li><a href="sejarah.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Tentang Sejarah</a></li>
+        <li><a href="visi-misi.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Visi & Misi</a></li>
+        <li><a href="program.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Program</a></li>
+      </ul>
+    </li>
+
+    <li><a href="galeri.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Galeri</a></li>
+    <li><a href="showcase.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Showcase</a></li>
+    <li><a href="login.html" class="block px-2 py-2 bg-[#d4af37] text-black rounded hover:bg-yellow-500">Login</a></li>
+  </ul>
+</nav>
+
+<section class="bg-[#112233] text-white py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#D4AF37] mb-10 font-cinzel">
+      SEJARAH CIKARA STUDIO
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="flex justify-center">
+        <img src="gambar/gambar sej 1.jpg" alt="Sejarah Cikara Studio" class="rounded-lg shadow-lg max-h-96">
+      </div>
+      <div class="leading-relaxed space-y-4">
+        <p>
+          Cikara Studio merupakan startup teknologi kreatif yang berdiri di Tasikmalaya, Jawa Barat,
+          dan mulai dirintis sejak 17 Juli 2017 oleh para lulusan muda dari Universitas Siliwangi.
+          Berawal dari semangat kolaborasi dan kecintaan terhadap dunia pengembangan digital,
+          Wahyu R. R. dan M. Solihin A. membentuk tim awal yang kemudian tumbuh menjadi komunitas kreatif yang solid.
+        </p>
+        <p>
+          Didukung oleh pengalaman dan pemahaman yang kuat terhadap teknologi, mereka mulai mengembangkan produk-produk digital
+          seperti game, aplikasi edukasi, sistem interaktif, hingga multimedia konten, dan berbagai solusi berbasis web serta desain.
+          Proyek-proyek tersebut bukan hanya menjadi sumber pengetahuan, namun juga berhasil membawa banyak karya digital
+          bersaing di kancah nasional dan global.
+        </p>
+        <p>
+          Kini, Cikara Studio telah menjadi ekosistem kreatif yang terus berkembang, memfokuskan diri pada pengembangan
+          karya yang berdampak. Dengan akar yang kuat di daerah, namun visi yang luas untuk dunia.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="bg-[#D4AF37] text-black">
+  <div class="h-2 w-full bg-black"></div>
+  <div class="container mx-auto px-4 py-10">
+    <div class="row gy-4">
+      <div class="col-md-3">
+        <div class="flex flex-col items-start">
+          <h4 class="text-xl font-bold font-poppins">Cikara Studio</h4>
+          <img src="gambar/CIKARA - WHITE.png" alt="Cikara Studio" class="mt-2 w-32">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="text-lg font-bold mb-3 font-poppins">Lokasi</h4>
+        <p>Perum Cipta Graha Mandiri</p>
+        <p>Blok A 23, Sukarindik</p>
+        <p>Bungursari, Tasikmalaya 45151</p>
+      </div>
+      <div class="col-md-5">
+        <h4 class="text-lg font-bold mb-3 font-poppins">Contact</h4>
+        <p class="mb-4">0853-1756-3748</p>
+        <div class="social-icons flex gap-3 mt-2">
+          <a href="https://www.instagram.com/cikarastudio" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-instagram text-xl"></i></a>
+          <a href="https://cikarastudio.com" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-globe2 text-xl"></i></a>
+          <a href="https://tiktok.com/@cikarastudio" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-music-note-beamed text-xl"></i></a>
+          <a href="https://youtube.com/@cikarastudio" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-youtube text-xl"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-black py-4 text-center text-sm text-white">
+    © 2025 Cikara Studio. All rights reserved.
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const profilBtn = document.getElementById('profilBtn');
+const profilMenu = document.getElementById('profilMenu');
+
+  profilBtn.addEventListener('click', e => {
+    e.stopPropagation(); 
+  profilMenu.classList.toggle('hidden');
+});
+document.addEventListener('click', () => {
+  if(!profilMenu.classList.contains('hidden')) {
+    profilMenu.classList.add('hidden');
+  }
+});
+
+  const mobileBtn = document.getElementById('mobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+ 
+  const mobileDropdownBtn = document.getElementById('mobileDropdownBtn');
+  const mobileDropdown = document.getElementById('mobileDropdown');
+  const arrow = mobileDropdownBtn.querySelector('svg');
+  mobileDropdownBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    mobileDropdown.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  });
+
+  mobileDropdown.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      mobileMenu.classList.add('hidden');
+      mobileDropdown.classList.add('hidden');
+      arrow.classList.remove('rotate-180');
+    });
+  });
+});
+</script>
+</body>
+</html>
