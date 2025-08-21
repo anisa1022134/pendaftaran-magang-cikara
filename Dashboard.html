@@ -4,8 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Petualang</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+  <link rel="stylesheet" href="css/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+<nav class="bg-[#112233] shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    <a href="index.html" class="flex items-center">
+      <img src="gambar/CIKARA - WHITE.png" alt="CIKARA Logo" class="h-10">
+    </a>
+
+    <ul class="hidden md:flex items-center space-x-6 text-white font-medium">
+      <li><a href="index.html" class="hover:text-[#d4af37] transition">Home</a></li>
+
+      <li class="relative">
+        <a href="#" id="profilBtn" class="hover:text-[#d4af37] font-semibold transition">
+          Profil <i class="bi bi-caret-down-fill ms-1"></i>
+        </a>
+        <ul id="profilMenu" class="absolute hidden bg-[#0c1c3d] rounded-md mt-2 w-44 shadow-lg z-50">
+          <li><a href="sejarah.html" class="block px-4 py-2 hover:bg-[#1c2f5a] hover:text-[#D4AF37]">Tentang Sejarah</a></li>
+          <li><a href="visi-misi.html" class="block px-4 py-2 hover:bg-[#1c2f5a] hover:text-[#D4AF37]">Visi & Misi</a></li>
+          <li><a href="program.html" class="block px-4 py-2 hover:bg-[#1c2f5a] hover:text-[#D4AF37]">Program</a></li>
+        </ul>
+      </li>
+
+      <li><a href="galeri.html" class="hover:text-[#d4af37] transition">Galeri</a></li>
+      <li><a href="showcase.html" class="hover:text-[#d4af37] transition">Showcase</a></li>
+      <li><a href="login.html" class="bg-[#d4af37] text-black px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">Login</a></li>
+    </ul>
+
+    <button id="mobileBtn" class="md:hidden flex flex-col justify-between w-6 h-6 focus:outline-none">
+      <span class="block h-0.5 w-full bg-white"></span>
+      <span class="block h-0.5 w-full bg-white"></span>
+      <span class="block h-0.5 w-full bg-white"></span>
+    </button>
+  </div>
+
+  <ul id="mobileMenu" class="md:hidden hidden bg-[#112233] text-white px-4 pt-2 pb-4 space-y-1">
+    <li><a href="index.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Home</a></li>
+
+    <li class="relative">
+      <button id="mobileDropdownBtn" class="w-full flex justify-between items-center px-2 py-2 hover:bg-[#1c2f5a] rounded">
+        Profil
+        <svg class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <ul id="mobileDropdown" class="hidden pl-4 mt-1 space-y-1">
+        <li><a href="sejarah.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Tentang Sejarah</a></li>
+        <li><a href="visi-misi.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Visi & Misi</a></li>
+        <li><a href="program.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Program</a></li>
+      </ul>
+    </li>
+
+    <li><a href="galeri.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Galeri</a></li>
+    <li><a href="showcase.html" class="block px-2 py-2 hover:bg-[#1c2f5a] rounded">Showcase</a></li>
+    <li><a href="login.html" class="block px-2 py-2 bg-[#d4af37] text-black rounded hover:bg-yellow-500">Login</a></li>
+  </ul>
+</nav>
+
     body { background-color: #0f1c36; }
     .tab-content { display: none; }
     .tab-active { display: block; }
@@ -236,13 +298,56 @@
   </button>
 </div>
 
-
-
-
-
     </main>
   </div>
 
+<footer class="bg-[#D4AF37] text-black w-full">
+  <!-- Garis hitam tipis di atas -->
+  <div class="h-2 w-full bg-black"></div>
+
+  <!-- Konten utama footer -->
+  <div class="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-10 w-full">
+
+    <!-- Logo -->
+    <div class="flex flex-col items-center md:items-start">
+      <h4 class="text-2xl font-bold font-poppins mb-2">Cikara Studio</h4>
+      <img src="gambar/CIKARA - WHITE.png" alt="Cikara Studio" class="w-36">
+    </div>
+
+    <!-- Lokasi -->
+    <div class="flex flex-col text-left min-w-[200px]">
+      <h4 class="text-lg font-bold font-poppins mb-2">Lokasi</h4>
+      <p>Perum Cipta Graha Mandiri</p>
+      <p>Blok A 23, Sukarindik</p>
+      <p>Bungursari, Tasikmalaya 45151</p>
+    </div>
+
+    <!-- Kontak -->
+    <div class="flex flex-col text-left min-w-[150px]">
+      <h4 class="text-lg font-bold font-poppins mb-2">Contact</h4>
+      <p>0853-1756-3748</p>
+    </div>
+
+    <!-- Sosial Media (sedikit terpisah dari kontak) -->
+    <div class="flex flex-col items-center md:items-end gap-3">
+      <h4 class="text-lg font-bold font-poppins mb-2">Follow Us</h4>
+      <div class="flex gap-4">
+        <a href="https://www.instagram.com/cikarastudio" target="_blank" class="flex items-center justify-center w-12 h-12 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-instagram text-xl"></i></a>
+        <a href="https://cikarastudio.com" target="_blank" class="flex items-center justify-center w-12 h-12 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-globe2 text-xl"></i></a>
+        <a href="https://tiktok.com/@cikarastudio" target="_blank" class="flex items-center justify-center w-12 h-12 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-music-note-beamed text-xl"></i></a>
+        <a href="https://youtube.com/@cikarastudio" target="_blank" class="flex items-center justify-center w-12 h-12 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-youtube text-xl"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="bg-black py-4 text-center text-sm text-white">
+    © 2025 Cikara Studio. All rights reserved.
+  </div>
+</footer>
+
+  
   <script>
     const buttons = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');

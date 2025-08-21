@@ -68,85 +68,154 @@
   </ul>
 </nav>
 
-<main class="wrap login-main flex flex-col items-center gap-8 py-10">
-  <div class="w-full max-w-3xl">
-    <h1 class="text-2xl md:text-3xl font-bold mb-4 text-center">
-      DAFTARKAN DIRIMU SEKARANG<br/>AYO MULAI LANGKAHMU!
+<body class="bg-[#112233] text-white font-poppins">
+<main class="flex flex-col items-center gap-10 py-16 px-4">
+
+  <div class="text-center max-w-3xl">
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">
+      DAFTARKAN DIRIMU SEKARANG<br>AYO MULAI LANGKAHMU!
     </h1>
-    <div class="map w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
-      <iframe
-        title="Lokasi Cikara Studio"
-        src="https://www.google.com/maps?q=Perum%20Cipta%20Graha%20Mandiri%20Blok%20A%2023,%20Sukarindik,%20Bungursari,%20Tasikmalaya%2046151&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-    </div>
   </div>
 
-  <form id="loginForm" 
-        class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto border border-gray-300">
-    <h2 class="text-2xl font-bold mb-6 text-center text-black">LOGIN</h2>
-
-    <div class="mb-4">
-      <label class="block mb-2 font-semibold">Email</label>
-      <input id="loginEmail" type="email" 
-             class="w-full px-4 py-2 rounded text-black border border-gray-400 
-                    focus:outline-none focus:ring-2 focus:ring-yellow-500" 
-             placeholder="Email" required>
-    </div>
-
-    <div class="mb-4">
-      <label class="block mb-2 font-semibold">Password</label>
-      <input id="loginPass" type="password" 
-             class="w-full px-4 py-2 rounded text-black border border-gray-400 
-                    focus:outline-none focus:ring-2 focus:ring-yellow-500" 
-             placeholder="Password" required>
-    </div>
-    <div class="mb-4">
-    <label class="block mb-2 font-semibold">Konfirmasi Password</label>
-    <input type="password" 
-           class="w-full px-4 py-2 rounded text-black border border-gray-400 
-                  focus:outline-none focus:ring-2 focus:ring-yellow-500" 
-           placeholder="Ulangi Password" required>
+  <div class="w-full max-w-4xl h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
+    <iframe
+      title="Lokasi Cikara Studio"
+      src="https://www.google.com/maps?q=Perum%20Cipta%20Graha%20Mandiri%20Blok%20A%2023,%20Sukarindik,%20Bungursari,%20Tasikmalaya%2046151&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
   </div>
 
-    <div class="flex items-center justify-between mb-4">
-      <label class="flex items-center text-sm text-black">
-        <input type="checkbox" class="mr-2"> Remember me
+  <form id="loginForm" class="bg-[#1c2f5a] p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-700">
+    <h2 class="text-2xl font-bold mb-6 text-center text-yellow-400">LOGIN</h2>
+
+    <div class="mb-4">
+      <label class="block mb-2 font-semibold text-white">Email</label>
+      <input id="loginEmail" type="email" placeholder="Email"
+             class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 font-semibold text-white">Password</label>
+      <input id="loginPass" type="password" placeholder="Password"
+             class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 font-semibold text-white">Konfirmasi Password</label>
+      <input id="loginPassConfirm" type="password" placeholder="Konfirmasi Password"
+             class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+    </div>
+
+    <div class="flex items-center justify-between mb-6">
+      <label class="flex items-center gap-2">
+        <input type="checkbox" id="rememberMe" class="accent-yellow-400">
+        <span class="text-white">Remember Me</span>
       </label>
-      <a href="#" class="text-sm text-blue-500 hover:underline">Forgot password?</a>
+      <a href="#" class="text-yellow-400 hover:underline text-sm">Forgot Password?</a>
     </div>
 
     <div class="flex justify-center">
       <button type="submit" 
-              class="w-1/2 bg-[#d4af37] text-black py-2 rounded font-bold hover:bg-yellow-500 transition">
+              class="w-1/2 bg-yellow-400 text-black py-2 rounded font-bold hover:bg-yellow-500 transition">
         Login
       </button>
     </div>
-
-     <p style="text-align:center; margin-top:20px">Belum punya akun? <a href="register.html">Daftar</a></p>
+  </form>
+</main>
+<footer class="bg-[#D4AF37] text-black">
+  <div class="h-2 w-full bg-black"></div>
+  <div class="container mx-auto px-4 py-10">
+    <div class="row gy-4">
+      <div class="col-md-3">
+        <div class="flex flex-col items-start">
+          <h4 class="text-xl font-bold font-poppins">Cikara Studio</h4>
+          <img src="gambar/CIKARA - WHITE.png" alt="Cikara Studio" class="mt-2 w-32">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="text-lg font-bold mb-3 font-poppins">Lokasi</h4>
+        <p>Perum Cipta Graha Mandiri</p>
+        <p>Blok A 23, Sukarindik</p>
+        <p>Bungursari, Tasikmalaya 45151</p>
+      </div>
+      <div class="col-md-5">
+        <h4 class="text-lg font-bold mb-3 font-poppins">Contact</h4>
+        <p class="mb-4">0853-1756-3748</p>
+        <div class="social-icons flex gap-3 mt-2">
+          <a href="https://www.instagram.com/cikarastudio" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-instagram text-xl"></i></a>
+          <a href="https://cikarastudio.com" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-globe2 text-xl"></i></a>
+          <a href="https://tiktok.com/@cikarastudio" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-music-note-beamed text-xl"></i></a>
+          <a href="https://youtube.com/@cikarastudio" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white text-[#112233] rounded-full shadow hover:bg-[#112233] hover:text-[#D4AF37] transition"><i class="bi bi-youtube text-xl"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
-    </button>
+  <div class="bg-black py-4 text-center text-sm text-white">
+    © 2025 Cikara Studio. All rights reserved.
   </div>
+</footer>
 <script>
-  document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop reload default
-    // validasi simple (bisa dikembangin)
-    const email = document.getElementById("loginEmail").value;
-    const pass = document.getElementById("loginPass").value;
+document.addEventListener("DOMContentLoaded", function() {
+  const profilBtn = document.getElementById('profilBtn');
+const profilMenu = document.getElementById('profilMenu');
 
-    if (email && pass) {
-      // redirect ke dashboard.html
-      window.location.href = "dashboard.html";
-    } else {
-      alert("Harap isi email & password!");
-    }
+  profilBtn.addEventListener('click', e => {
+    e.stopPropagation(); 
+  profilMenu.classList.toggle('hidden');
+});
+document.addEventListener('click', () => {
+  if(!profilMenu.classList.contains('hidden')) {
+    profilMenu.classList.add('hidden');
+  }
+});
+
+  const mobileBtn = document.getElementById('mobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+  const mobileDropdownBtn = document.getElementById('mobileDropdownBtn');
+  const mobileDropdown = document.getElementById('mobileDropdown');
+  const arrow = mobileDropdownBtn.querySelector('svg');
+  mobileDropdownBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    mobileDropdown.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
   });
+
+  mobileDropdown.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      mobileMenu.classList.add('hidden');
+      mobileDropdown.classList.add('hidden');
+      arrow.classList.remove('rotate-180');
+    });
+  });
+});
+</script>
+</body>
+</html>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const email = document.getElementById("loginEmail").value;
+  const pass = document.getElementById("loginPass").value;
+  const passConfirm = document.getElementById("loginPassConfirm").value;
+
+  if (!email || !pass || !passConfirm) {
+    alert("Harap isi semua field!");
+    return;
+  }
+
+  if (pass !== passConfirm) {
+    alert("Password dan konfirmasi password tidak cocok!");
+    return;
+  }
+  window.location.href = "dashboard.html";
+});
 </script>
 
-
-  
- 
+</body>
+</html>
