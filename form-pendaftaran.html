@@ -7,11 +7,27 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #0c1c3d;
+      font-family: 'Poppins', sans-serif;
+    }
+    main {
+      flex: 1; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
 <nav class="bg-[#112233] shadow-lg sticky top-0 z-50">
   <div class="container mx-auto flex items-center justify-between px-4 py-3">
@@ -68,120 +84,100 @@
   </ul>
 </nav>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const mobileBtn = document.getElementById('mobileBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const dropdownBtn = document.getElementById('mobileDropdownBtn');
-  const dropdownMenu = document.getElementById('mobileDropdown');
 
-  mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-  dropdownBtn.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('hidden');
-    dropdownBtn.querySelector('svg').classList.toggle('rotate-180');
-  });
-  dropdownMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.stopPropagation(); 
-  });
-});
-});
-</script>
-</style>
-<body class="bg-[#0c1c3d] font-[Poppins]">
+<section class="container my-5">
+  <h5 class="fw-bold text-white text-center" style="color:var(--gold)">
+  PENDAFTARAN PEMAGANGAN
+</h5>
+<h2 class="fw-bold display-5 mb-3 text-white text-center">
+  Pendaftaran Magang
+</h2>
 
-  <!-- Container tengah -->
-  <div class="min-h-screen flex items-center justify-center px-4">
-    <div class="bg-[#112233] p-8 rounded-2xl shadow-2xl w-full max-w-4xl text-white">
-      <h2 class="text-2xl font-bold text-center text-[#d4af37] mb-6">Formulir Pendaftaran Magang</h2>
+  <p class="text-center mb-5 text-light">Bagi para calon peserta magang atau PKL silahkan mengisi form terlebih dahulu</p>
 
-      <!-- FORM -->
-      <form id="registerForm" class="space-y-6">
+  <form action="save-pendaftaran.php" method="POST" enctype="multipart/form-data" class="row g-3 text-light">
 
-        <!-- Data Pribadi -->
-        <div class="grid md:grid-cols-3 gap-4">
-          <div>
-            <label class="block mb-1">Nama Lengkap</label>
-            <input id="f_nama" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent" placeholder="Nama lengkap">
-          </div>
-          <div>
-            <label class="block mb-1">Tempat Lahir</label>
-            <input id="f_tempat" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent" placeholder="Kota">
-          </div>
-          <div>
-            <label class="block mb-1">Tanggal Lahir</label>
-            <input id="f_tgl" type="date" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent">
-          </div>
-        </div>
-
-        <!-- Jenis Kelamin -->
-        <div class="flex space-x-6">
-          <label><input type="radio" name="jk" value="L" checked> Laki-laki</label>
-          <label><input type="radio" name="jk" value="P"> Perempuan</label>
-        </div>
-
-        <!-- Kontak -->
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="block mb-1">Nomor Telepon</label>
-            <input id="f_phone" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent" placeholder="08xxxx">
-          </div>
-          <div>
-            <label class="block mb-1">Email</label>
-            <input id="f_email" type="email" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent" placeholder="email@domain">
-          </div>
-        </div>
-
-        <!-- Pendidikan -->
-        <h3 class="text-lg font-semibold text-[#d4af37]">Data Pendidikan</h3>
-        <div class="grid md:grid-cols-3 gap-4">
-          <div><label class="block mb-1">Asal Sekolah/Kampus</label><input id="f_sekolah" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent"></div>
-          <div><label class="block mb-1">Jurusan</label><input id="f_jurusan" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent"></div>
-          <div><label class="block mb-1">Semester/Tingkat</label><input id="f_semester" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent"></div>
-        </div>
-
-        <!-- Program Magang -->
-        <h3 class="text-lg font-semibold text-[#d4af37]">Program Magang</h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div><label class="block mb-1">Tanggal Masuk</label><input id="f_in" type="date" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent"></div>
-          <div><label class="block mb-1">Tanggal Selesai</label><input id="f_out" type="date" class="w-full px-3 py-2 rounded-md border border-[#d4af37] bg-transparent"></div>
-        </div>
-
-        <!-- Tombol -->
-        <div class="flex justify-end">
-          <button type="submit" class="bg-[#d4af37] text-black font-semibold px-6 py-2 rounded-md hover:bg-yellow-500 transition">
-            Kirim Pendaftaran
-          </button>
-        </div>
-      </form>
+    <div class="col-md-6">
+      <label class="form-label">Nama Lengkap *</label>
+      <input type="text" name="nama" class="form-control bg-dark text-light border border-warning" required>
     </div>
-  </div>
-</body>
+
+    <div class="col-md-6">
+      <label class="form-label">Alamat Lengkap *</label>
+      <input type="text" name="alamat" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Jenis Kelamin *</label>
+      <select name="jk" class="form-select bg-dark text-light border border-warning" required>
+        <option value="">Pilih</option>
+        <option value="L">Laki-laki</option>
+        <option value="P">Perempuan</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Asal Sekolah *</label>
+      <input type="text" name="asal_sekolah" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Nama Jurusan *</label>
+      <input type="text" name="jurusan" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">No Kontak (WA/Telp) *</label>
+      <input type="text" name="no_kontak" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Email *</label>
+      <input type="email" name="email" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Alasan Memilih Cikara Studio *</label>
+      <textarea name="alasan" rows="3" class="form-control bg-dark text-light border border-warning" required></textarea>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Rencana Mulai Magang *</label>
+      <input type="date" name="tgl_mulai" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Sampai Dengan *</label>
+      <input type="date" name="tgl_akhir" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Upload CV *</label>
+      <input type="file" name="cv" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Upload Portofolio *</label>
+      <input type="file" name="portfolio" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Foto Resmi *</label>
+      <input type="file" name="foto_resmi" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Foto Non Resmi *</label>
+      <input type="file" name="foto_non_resmi" class="form-control bg-dark text-light border border-warning" required>
+    </div>
+
+    <div class="col-12 text-end">
+      <button type="submit" class="btn btn-primary fw-bold px-4">Kirim Pendaftaran</button>
+    </div>
+  </form>
+</section>
 
 
-  <script>
-    document.getElementById("registerForm").addEventListener("submit", function(e){
-      e.preventDefault();
-
-      const user = {
-        nama: document.getElementById("f_nama").value,
-        email: document.getElementById("f_email").value,
-        password: document.getElementById("f_password").value,
-        phone: document.getElementById("f_phone").value,
-        sekolah: document.getElementById("f_sekolah").value,
-        jurusan: document.getElementById("f_jurusan").value,
-        semester: document.getElementById("f_semester").value,
-        in: document.getElementById("f_in").value,
-        out: document.getElementById("f_out").value
-      };
-
-      localStorage.setItem("user", JSON.stringify(user));
-      alert("Pendaftaran berhasil! Silakan login.");
-      window.location.href = "login.html";
-    });
-  </script>
 <footer class="bg-[#D4AF37] text-black">
   <div class="h-2 w-full bg-black"></div>
   <div class="container mx-auto px-4 py-10">
@@ -214,20 +210,20 @@ document.addEventListener("DOMContentLoaded", function() {
     © 2025 Cikara Studio. All rights reserved.
   </div>
 </footer>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const profilBtn = document.getElementById('profilBtn');
-const profilMenu = document.getElementById('profilMenu');
-
+  const profilMenu = document.getElementById('profilMenu');
   profilBtn.addEventListener('click', e => {
     e.stopPropagation(); 
-  profilMenu.classList.toggle('hidden');
-});
-document.addEventListener('click', () => {
-  if(!profilMenu.classList.contains('hidden')) {
-    profilMenu.classList.add('hidden');
-  }
-});
+    profilMenu.classList.toggle('hidden');
+  });
+  document.addEventListener('click', () => {
+    if(!profilMenu.classList.contains('hidden')) {
+      profilMenu.classList.add('hidden');
+    }
+  });
 
   const mobileBtn = document.getElementById('mobileBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -250,6 +246,30 @@ document.addEventListener('click', () => {
     });
   });
 });
+
+document.getElementById("registerForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = document.getElementById("registerForm");
+  const formData = new FormData(form); 
+  try {
+    const response = await fetch("save-pendaftaran.php", {
+      method: "POST",
+      body: formData
+    });
+    if (!response.ok) throw new Error("Gagal mengirim data ke server");
+    const result = await response.json();
+    if (result.success) {
+      alert("Pendaftaran berhasil! Data tersimpan di database.");
+      window.location.href = "login.html";
+    } else {
+      alert("Gagal menyimpan data: " + (result.message || "Error tidak diketahui"));
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Terjadi kesalahan saat mengirim data");
+  }
+});
 </script>
+
 </body>
 </html>

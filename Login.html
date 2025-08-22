@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-800">
-
 <nav class="bg-[#112233] shadow-lg sticky top-0 z-50">
   <div class="container mx-auto flex items-center justify-between px-4 py-3">
     <a href="index.html" class="flex items-center">
@@ -72,11 +70,10 @@
 <main class="flex flex-col items-center gap-10 py-16 px-4">
 
   <div class="text-center max-w-3xl">
-    <h1 class="text-3xl md:text-4xl font-bold mb-6">
-      DAFTARKAN DIRIMU SEKARANG<br>AYO MULAI LANGKAHMU!
-    </h1>
-  </div>
-
+  <h1 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Cinzel', serif;">
+    DAFTARKAN DIRIMU SEKARANG<br>AYO MULAI LANGKAHMU!
+  </h1>
+</div>
   <div class="w-full max-w-4xl h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
     <iframe
       title="Lokasi Cikara Studio"
@@ -90,41 +87,35 @@
   </div>
 
   <form id="loginForm" class="bg-[#1c2f5a] p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-700">
-    <h2 class="text-2xl font-bold mb-6 text-center text-yellow-400">LOGIN</h2>
+  <h2 class="text-2xl font-bold mb-6 text-center text-yellow-400">LOGIN</h2>
+  
+  <div class="mb-4">
+    <label class="block mb-2 font-semibold text-white">Email</label>
+    <input id="loginEmail" type="email" placeholder="Email"
+           class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+  </div>
 
-    <div class="mb-4">
-      <label class="block mb-2 font-semibold text-white">Email</label>
-      <input id="loginEmail" type="email" placeholder="Email"
-             class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-    </div>
+  <div class="mb-4">
+    <label class="block mb-2 font-semibold text-white">Password</label>
+    <input id="loginPass" type="password" placeholder="Password"
+           class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+  </div>
 
-    <div class="mb-4">
-      <label class="block mb-2 font-semibold text-white">Password</label>
-      <input id="loginPass" type="password" placeholder="Password"
-             class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-    </div>
+  <div class="flex items-center justify-between mb-6">
+    <label class="flex items-center gap-2">
+      <input type="checkbox" id="rememberMe" class="accent-yellow-400">
+      <span class="text-white">Remember Me</span>
+    </label>
+    <a href="#" class="text-yellow-400 hover:underline text-sm">Forgot Password?</a>
+  </div>
 
-    <div class="mb-4">
-      <label class="block mb-2 font-semibold text-white">Konfirmasi Password</label>
-      <input id="loginPassConfirm" type="password" placeholder="Konfirmasi Password"
-             class="w-full px-4 py-2 rounded text-black border border-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
-    </div>
-
-    <div class="flex items-center justify-between mb-6">
-      <label class="flex items-center gap-2">
-        <input type="checkbox" id="rememberMe" class="accent-yellow-400">
-        <span class="text-white">Remember Me</span>
-      </label>
-      <a href="#" class="text-yellow-400 hover:underline text-sm">Forgot Password?</a>
-    </div>
-
-    <div class="flex justify-center">
-      <button type="submit" 
-              class="w-1/2 bg-yellow-400 text-black py-2 rounded font-bold hover:bg-yellow-500 transition">
-        Login
-      </button>
-    </div>
-  </form>
+  <div class="flex justify-center">
+    <button type="submit" 
+            class="w-1/2 bg-yellow-400 text-black py-2 rounded font-bold hover:bg-yellow-500 transition">
+      Login
+    </button>
+  </div>
+</form>
 </main>
 <footer class="bg-[#D4AF37] text-black">
   <div class="h-2 w-full bg-black"></div>
@@ -158,64 +149,35 @@
     © 2025 Cikara Studio. All rights reserved.
   </div>
 </footer>
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const profilBtn = document.getElementById('profilBtn');
-const profilMenu = document.getElementById('profilMenu');
-
-  profilBtn.addEventListener('click', e => {
-    e.stopPropagation(); 
-  profilMenu.classList.toggle('hidden');
-});
-document.addEventListener('click', () => {
-  if(!profilMenu.classList.contains('hidden')) {
-    profilMenu.classList.add('hidden');
-  }
-});
-
-  const mobileBtn = document.getElementById('mobileBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-
-  const mobileDropdownBtn = document.getElementById('mobileDropdownBtn');
-  const mobileDropdown = document.getElementById('mobileDropdown');
-  const arrow = mobileDropdownBtn.querySelector('svg');
-  mobileDropdownBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    mobileDropdown.classList.toggle('hidden');
-    arrow.classList.toggle('rotate-180');
-  });
-
-  mobileDropdown.querySelectorAll('a').forEach(link=>{
-    link.addEventListener('click', ()=>{
-      mobileMenu.classList.add('hidden');
-      mobileDropdown.classList.add('hidden');
-      arrow.classList.remove('rotate-180');
-    });
-  });
-});
-</script>
-</body>
-</html>
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
   e.preventDefault();
+
   const email = document.getElementById("loginEmail").value;
-  const pass = document.getElementById("loginPass").value;
-  const passConfirm = document.getElementById("loginPassConfirm").value;
+  const password = document.getElementById("loginPass").value;
 
-  if (!email || !pass || !passConfirm) {
-    alert("Harap isi semua field!");
-    return;
-  }
+  try {
+    const res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
 
-  if (pass !== passConfirm) {
-    alert("Password dan konfirmasi password tidak cocok!");
-    return;
+    const data = await res.json();
+    console.log("Server response:", data); //
+
+    if (res.ok && data.token) {
+      localStorage.setItem("token", data.token); // 
+      window.location.href = "dashboard.html";  // 
+    } else {
+      alert(data.message || "Login gagal!");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Terjadi kesalahan server.");
   }
-  window.location.href = "dashboard.html";
 });
 </script>
-
 </body>
 </html>
