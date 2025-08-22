@@ -88,6 +88,56 @@
         <button class="tab-btn w-full text-left px-3 py-2 rounded-lg hover:bg-[#1c2f5a]" data-target="profil">👤 Profil & Riwayat</button>
       </nav>
     </aside>
+    
+    <section id="dashboard-petualang" class="tab-content">
+  <h2 class="text-2xl font-bold mb-6 text-center">Dashboard Petualang</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Profil -->
+    <div class="bg-[#1c2f5a] p-4 rounded-xl flex flex-col items-center">
+      <img src="https://i.ibb.co/8K7Gq8N/avatar.png" class="w-24 h-24 rounded-full border-4 border-yellow-400 mb-3">
+      <h3 class="text-xl font-bold">Aria</h3>
+      <p class="text-sm">Level 8</p>
+      <div class="w-full bg-gray-700 h-3 rounded mt-2">
+        <div class="bg-green-400 h-3 rounded" style="width:75%"></div>
+      </div>
+      <p class="text-xs mt-1">Daily Progress</p>
+    </div>
+
+    <!-- IMPORTANT -->
+    <div class="bg-[#1c2f5a] p-4 rounded-xl text-center">
+      <h4 class="font-bold text-yellow-400 mb-3">IMPORTANT!</h4>
+      <p class="text-sm">Complete the quiz about fruits and vegetables in the game today!</p>
+    </div>
+
+    <!-- Notifications -->
+    <div class="bg-[#1c2f5a] p-4 rounded-xl text-center">
+      <h4 class="font-bold mb-2">Notifications</h4>
+      <p class="text-green-400">You’ve earned 100 XP</p>
+    </div>
+  </div>
+
+  <!-- Quest & Daily Progress -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+    <div class="bg-[#1c2f5a] p-4 rounded-xl">
+      <h4 class="font-bold mb-3">QUEST</h4>
+      <p>Design the quiz interface</p>
+      <p class="mt-3">✅ Complete Quiz Interface</p>
+    </div>
+
+    <div class="bg-[#1c2f5a] p-4 rounded-xl">
+      <h4 class="font-bold mb-3">DAILY PROGRESS</h4>
+      <canvas id="progressChart" class="w-full h-40"></canvas>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="bg-[#1c2f5a] p-6 rounded-xl text-center mt-6">
+    <h4 class="font-bold mb-3">Your Stats</h4>
+    <p>LEVEL: <span class="text-yellow-400">8.579</span></p>
+    <p>Collected: <span class="text-yellow-400">230</span></p>
+  </div>
+</section>
 
     <main class="flex-1 p-6 space-y-6">
       <section id="markas" class="tab-content tab-active">
@@ -204,13 +254,13 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 210mm;   /* A4 width */
-    height: 297mm;  /* A4 height */
+    width: 210mm;  
+    height: 297mm;  
     padding: 20mm;
     background: white;
   }
   .no-print {
-    display: none !important; /* hide tombol print di hasil */
+    display: none !important;
   }
 }
 body { background-color: #0f1c36; }
@@ -218,7 +268,7 @@ body { background-color: #0f1c36; }
   .tab-active { display: block; }
 </style>
 
-      <!-- Feedback -->
+
       <section id="feedback" class="tab-content">
         <h2 class="text-2xl font-bold mb-4">Feedback dari Master</h2>
         <div class="bg-[#1c2f5a] p-6 rounded-xl">
@@ -228,7 +278,7 @@ body { background-color: #0f1c36; }
         </div>
       </section>
 
-    <!-- Profil & Riwayat -->
+ 
 <section id="profil" class="tab-content">
   <h2 class="text-2xl font-bold mb-6 text-center">Profil & Riwayat Petualangan</h2>
 
@@ -344,44 +394,44 @@ body { background-color: #0f1c36; }
         document.getElementById(btn.dataset.target).classList.add('tab-active');
       });
     });
-     async function loadUser() {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        alert("Anda belum login!");
-        window.location.href = "login.html";
-        return;
-      }
+function loadUser() {
+  document.getElementById("userInfo").textContent = "Halo, Petualang!";
+}
 
-      try {
-        const res = await fetch("http://localhost:3000/profile", {
-          method: "GET",
-          headers: {
-            "Authorization": `Bearer ${token}`
-          }
-        });
+function logout() {
+  alert("Logout berhasil (simulasi)!");
+  window.location.href = "login.html";
+}
 
-        const data = await res.json();
+loadUser();
 
-        if (!res.ok) {
-          alert(data.message || "Sesi habis, silakan login ulang.");
-          localStorage.removeItem("token");
-          window.location.href = "login.html";
-          return;
-        }
-
-        document.getElementById("userInfo").textContent = `Halo, ${data.email}`;
-      } catch (err) {
-        console.error(err);
-        alert("Gagal mengambil data user.");
-      }
-    }
-
-    function logout() {
-      localStorage.removeItem("token");
-      window.location.href = "login.html";
-    }
-
-    loadUser();
   </script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('progressChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
+    datasets: [{
+      label: 'Progress',
+      data: [20, 35, 45, 50, 80],
+      borderColor: '#facc15',
+      backgroundColor: '#facc15',
+      fill: false,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#333' }, ticks: { color: '#fff' } },
+      x: { grid: { color: '#333' }, ticks: { color: '#fff' } }
+    }
+  }
+});
+</script>
+
 </html>

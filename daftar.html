@@ -80,9 +80,17 @@
         <label class="form-label">Password</label>
         <input type="password" class="form-control" placeholder="Buat password" required>
       </div>
-      <button type="submit" class="btn btn-warning w-full text-black">Daftar</button>
+
+      <div class="mb-4">
+  <label class="form-label">Konfirmasi Password</label>
+  <input type="password" id="confirm-password" class="form-control" placeholder="Konfirmasi password" required>
+</div>
+      <a href="form-pendaftaran.html" class="btn btn-warning w-full text-black">Daftar</a>
     </form>
-    <p style="margin-top:20px">Sudah punya akun? <a href="login.html">Login</a></p>
+  <div style="text-align:center; margin-top:20px;">
+  <p>Sudah punya akun? <a href="login.html" style="color:#D4AF37; text-decoration:none;">Login</a></p>
+</div>
+
 </section>
 </body>
 <footer class="bg-[#D4AF37] text-black">
@@ -152,6 +160,15 @@ document.addEventListener('click', () => {
       arrow.classList.remove('rotate-180');
     });
   });
+});
+document.querySelector('form').addEventListener('submit', function(e) {
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  if (password !== confirmPassword) {
+    e.preventDefault(); 
+    alert('Password dan Konfirmasi Password tidak sama!');
+  }
 });
 </script>
 </body>
